@@ -46,6 +46,18 @@
       <HintPath>..\packages\Refractored.PagerSlidingTabStrip.1.0.9\lib\MonoAndroid10\Refractored.PagerSlidingTabStrip.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Square.OkHttp, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Square.OkHttp.2.4.0.1\lib\MonoAndroid\Square.OkHttp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Square.OkIO, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Square.OkIO.1.5.0.0\lib\MonoAndroid\Square.OkIO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Square.Picasso, Version=2.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Square.Picasso.2.5.2.1\lib\MonoAndroid\Square.Picasso.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -72,8 +84,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter\MaterialAdapterDataObserver.cs" />
+    <Compile Include="Adapter\MaterialViewHolder.cs" />
+    <Compile Include="Adapter\RecyclerViewMaterialAdapter.cs" />
     <Compile Include="Extension.cs" />
     <Compile Include="Header\HeaderDesign.cs" />
+    <Compile Include="Header\MaterialViewPagerImageHeader.cs" />
     <Compile Include="Header\MaterialViewPagerImageHelper.cs" />
     <Compile Include="Library\IObservableScrollViewCallbacks.cs" />
     <Compile Include="Library\IScrollable.cs" />
@@ -154,6 +170,10 @@
       <Visible>False</Visible>
       <Version>1.0.9</Version>
     </XamarinComponentReference>
+    <XamarinComponentReference Include="square.picasso">
+      <Visible>False</Visible>
+      <Version>2.5.2.1</Version>
+    </XamarinComponentReference>
     <XamarinComponentReference Include="xamandroidsupportv4-18">
       <Visible>False</Visible>
       <Version>22.2.0.0</Version>
@@ -171,8 +191,12 @@
       <Version>22.2.0.0</Version>
     </XamarinComponentReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Adapter\" />
+    <ProjectReference Include="..\KenBurnsView.Xamarin\KenBurnsView.Xamarin.csproj">
+      <Project>{51dd267d-1abd-415a-9f56-819356fdd95c}</Project>
+      <Name>KenBurnsView.Xamarin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

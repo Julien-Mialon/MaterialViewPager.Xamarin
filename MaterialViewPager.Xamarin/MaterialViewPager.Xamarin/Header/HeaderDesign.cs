@@ -1,38 +1,54 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
 using Android.Graphics.Drawables;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 
 namespace MaterialViewPager.Header
 {
 	public class HeaderDesign
 	{
-		public Drawable GetDrawable()
+		public int Color { get; protected set; }
+		public int ColorRes { get; protected set; }
+		public String ImageUrl { get; protected set; }
+		public Drawable Drawable { get; protected set; }
+
+		protected HeaderDesign()
 		{
-			throw new NotImplementedException();
+
 		}
 
-		public string GetImageUrl()
+		public static HeaderDesign FromColorAndUrl(int color, String imageUrl)
 		{
-			throw new NotImplementedException();
+			return new HeaderDesign
+			{
+				Color = color,
+				ImageUrl = imageUrl
+			};
 		}
 
-		public int GetColorRes()
+		public static HeaderDesign FromColorResAndUrl(int colorRes, String imageUrl)
 		{
-			throw new NotImplementedException();
+			return new HeaderDesign
+			{
+				ColorRes = colorRes,
+				ImageUrl = imageUrl
+			};
 		}
 
-		public int GetColor()
+		public static HeaderDesign FromColorAndDrawable(int color, Drawable drawable)
 		{
-			throw new NotImplementedException();
+			return new HeaderDesign
+			{
+				Drawable = drawable,
+				Color = color
+			};
+		}
+
+		public static HeaderDesign FromColorResAndDrawable(int colorRes, Drawable drawable)
+		{
+			return new HeaderDesign
+			{
+				ColorRes = colorRes,
+				Drawable = drawable
+			};
 		}
 	}
 }

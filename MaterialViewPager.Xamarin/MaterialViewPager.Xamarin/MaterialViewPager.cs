@@ -43,7 +43,7 @@ namespace MaterialViewPager
     /**
      * Contains all references to MatervialViewPager's header views
      */
-    protected MaterialViewPagerHeader MaterialViewPagerHeader;
+    protected internal MaterialViewPagerHeader MaterialViewPagerHeader;
 
     //the child toolbar
     protected Toolbar MToolbar;
@@ -58,7 +58,7 @@ namespace MaterialViewPager
     protected View ToolbarLayoutBackground;
 
     //Class containing the configuration of the MaterialViewPager
-    protected MaterialViewPagerSettings Settings = new MaterialViewPagerSettings();
+    protected internal MaterialViewPagerSettings Settings = new MaterialViewPagerSettings();
 
     protected IListener Listener;
 
@@ -256,7 +256,7 @@ namespace MaterialViewPager
      * Change the header color
      */
     public void SetColor(int color, int fadeDuration) {
-        MaterialViewPagerHelper.GetAnimator(Context).setColor(color, fadeDuration * 2);
+        MaterialViewPagerHelper.GetAnimator(Context).SetColor(color, fadeDuration * 2);
     }
 
     
@@ -266,7 +266,7 @@ namespace MaterialViewPager
 	    SavedState ss = new SavedState(superState)
 	    {
 		    Settings = Settings,
-		    YOffset = MaterialViewPagerHelper.GetAnimator(Context).lastYOffset
+		    YOffset = MaterialViewPagerHelper.GetAnimator(Context).LastYOffset
 	    };
 	    //end
 
@@ -285,7 +285,7 @@ namespace MaterialViewPager
         MaterialViewPagerAnimator animator = MaterialViewPagerHelper.GetAnimator(Context);
 
         //-1*ss.yOffset restore to 0
-        animator.restoreScroll(-1 * ss.YOffset, ss.Settings);
+        animator.RestoreScroll(-1 * ss.YOffset, ss.Settings);
         MaterialViewPagerHelper.Register(Context, animator);
     }
 
@@ -324,15 +324,15 @@ namespace MaterialViewPager
             return;
 
         int fadeDuration = 400;
-        int color = headerDesign.GetColor();
-        if (headerDesign.GetColorRes() != 0) {
-            color = Context.Resources.GetColor(headerDesign.GetColorRes());
+        int color = headerDesign.Color;
+        if (headerDesign.ColorRes != 0) {
+            color = Context.Resources.GetColor(headerDesign.ColorRes);
         }
 
-        if (headerDesign.GetDrawable() != null) {
-            SetImageDrawable(headerDesign.GetDrawable(), fadeDuration);
+        if (headerDesign.Drawable != null) {
+            SetImageDrawable(headerDesign.Drawable, fadeDuration);
         } else {
-            SetImageUrl(headerDesign.GetImageUrl(), fadeDuration);
+            SetImageUrl(headerDesign.ImageUrl, fadeDuration);
         }
 
         SetColor(color, fadeDuration);
@@ -343,7 +343,7 @@ namespace MaterialViewPager
     
     public void OnPageScrollStateChanged(int state) {
         if (Settings.DisplayToolbarWhenSwipe) {
-            MaterialViewPagerHelper.GetAnimator(Context).onViewPagerPageChanged();
+            MaterialViewPagerHelper.GetAnimator(Context).OnViewPagerPageChanged();
         }
     }
 

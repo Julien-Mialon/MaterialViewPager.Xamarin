@@ -45,7 +45,7 @@ namespace MaterialViewPager
 			if (animator != null)
 			{
 				ViewGroup.LayoutParams param = LayoutParameters;
-				param.Height = (int)Math.Round(Utils.DpToPx(animator.getHeaderHeight() + 10, Context));
+				param.Height = (int)Math.Round(Utils.DpToPx(animator.GetHeaderHeight() + 10, Context));
 				LayoutParameters = param;
 			}
 		}

@@ -12,5 +12,22 @@ namespace MaterialViewPager
 				action(item);
 			}
 		}
+
+		public static void AddOrUpdate<TKey, TValue>(this IDictionary<TKey, TValue> source, TKey key, TValue value)
+		{
+			if (source == null)
+			{
+				throw new ArgumentNullException("source");
+			}
+
+			if (source.ContainsKey(key))
+			{
+				source[key] = value;
+			}
+			else
+			{
+				source.Add(key, value);
+			}
+		}
 	}
 }

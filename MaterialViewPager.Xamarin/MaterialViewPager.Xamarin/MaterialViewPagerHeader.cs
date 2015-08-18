@@ -8,16 +8,16 @@ namespace MaterialViewPager
 	public class MaterialViewPagerHeader
 	{
 
-		protected Context Context;
+		protected internal Context Context;
 
-		protected View ToolbarLayout;
-		protected Toolbar Toolbar;
-		protected View MPagerSlidingTabStrip;
+		protected internal View ToolbarLayout;
+		protected internal Toolbar Toolbar;
+		protected internal View MPagerSlidingTabStrip;
 
-		protected View ToolbarLayoutBackground;
-		protected View HeaderBackground;
-		protected View StatusBackground;
-		protected View MLogo;
+		protected internal View ToolbarLayoutBackground;
+		protected internal View HeaderBackground;
+		protected internal View StatusBackground;
+		protected internal View MLogo;
 
 		//positions used to animate views during scroll
 
