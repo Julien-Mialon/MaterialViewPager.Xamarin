@@ -1,6 +1,6 @@
 using Android.Views;
 
-namespace MaterialViewPager.Library
+namespace ObservableScrollView
 {
 	public interface IScrollable
 	{

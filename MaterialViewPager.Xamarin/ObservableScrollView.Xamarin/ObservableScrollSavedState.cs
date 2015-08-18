@@ -4,7 +4,7 @@ using Android.Views;
 using Java.Interop;
 using Java.Lang;
 
-namespace MaterialViewPager.Library
+namespace ObservableScrollView
 {
 	public class ObservableScrollSavedState : View.BaseSavedState
 	{

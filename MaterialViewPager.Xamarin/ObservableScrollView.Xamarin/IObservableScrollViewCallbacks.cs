@@ -1,4 +1,4 @@
-namespace MaterialViewPager.Library
+namespace ObservableScrollView
 {
 	public interface IObservableScrollViewCallbacks
 	{
@@ -24,6 +24,6 @@ namespace MaterialViewPager.Library
 		 *
 		 * @param scrollState state to indicate the scroll direction
 		 */
-		void OnUpOrCancelMotionEvent(ScrollState scrollState);
+		void OnUpOrCancelMotionEvent(ObservableScrollState scrollState);
 	}
 }

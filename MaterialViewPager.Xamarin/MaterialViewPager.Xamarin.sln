@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialViewPager.Xamarin",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KenBurnsView.Xamarin", "KenBurnsView.Xamarin\KenBurnsView.Xamarin.csproj", "{51DD267D-1ABD-415A-9F56-819356FDD95C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialViewPager.Sample", "MaterialViewPager.Sample\MaterialViewPager.Sample.csproj", "{DE3415E6-F619-4CBF-A083-75A04CB8340B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carpaccio.Xamarin", "Carpaccio.Xamarin\Carpaccio.Xamarin.csproj", "{B0DCC4C0-C6E8-47E7-9B7C-BA610839D96E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialViewPagerController.Xamarin", "MaterialViewPagerController.Xamarin\MaterialViewPagerController.Xamarin.csproj", "{958B7082-58C8-435D-88AF-9871E3485356}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservableScrollView.Xamarin", "ObservableScrollView.Xamarin\ObservableScrollView.Xamarin.csproj", "{B26BD487-8BE7-4CCE-95A0-17DEFC5412A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +29,24 @@ Global
 		{51DD267D-1ABD-415A-9F56-819356FDD95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51DD267D-1ABD-415A-9F56-819356FDD95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51DD267D-1ABD-415A-9F56-819356FDD95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE3415E6-F619-4CBF-A083-75A04CB8340B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE3415E6-F619-4CBF-A083-75A04CB8340B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE3415E6-F619-4CBF-A083-75A04CB8340B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DE3415E6-F619-4CBF-A083-75A04CB8340B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE3415E6-F619-4CBF-A083-75A04CB8340B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE3415E6-F619-4CBF-A083-75A04CB8340B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B0DCC4C0-C6E8-47E7-9B7C-BA610839D96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0DCC4C0-C6E8-47E7-9B7C-BA610839D96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0DCC4C0-C6E8-47E7-9B7C-BA610839D96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0DCC4C0-C6E8-47E7-9B7C-BA610839D96E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{958B7082-58C8-435D-88AF-9871E3485356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{958B7082-58C8-435D-88AF-9871E3485356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{958B7082-58C8-435D-88AF-9871E3485356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{958B7082-58C8-435D-88AF-9871E3485356}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B26BD487-8BE7-4CCE-95A0-17DEFC5412A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26BD487-8BE7-4CCE-95A0-17DEFC5412A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26BD487-8BE7-4CCE-95A0-17DEFC5412A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26BD487-8BE7-4CCE-95A0-17DEFC5412A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

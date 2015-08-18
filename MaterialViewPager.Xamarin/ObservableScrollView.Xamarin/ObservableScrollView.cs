@@ -2,39 +2,38 @@ using Android.Content;
 using Android.OS;
 using Android.Util;
 using Android.Views;
-using Android.Webkit;
+using Android.Widget;
 
-namespace MaterialViewPager.Library
+namespace ObservableScrollView
 {
-	public class ObservableWebView : WebView, IScrollable
+	public class ObservableScrollView : ScrollView, IScrollable
 	{
-
 		// Fields that should be saved onSaveInstanceState
 		private int _mPrevScrollY;
 		private int _mScrollY;
 
 		// Fields that don't need to be saved onSaveInstanceState
 		private IObservableScrollViewCallbacks _mCallbacks;
-		private ScrollState _mScrollState;
+		private ObservableScrollState _mScrollState;
 		private bool _mFirstScroll;
 		private bool _mDragging;
 		private bool _mIntercepted;
 		private MotionEvent _mPrevMoveEvent;
 		private ViewGroup _mTouchInterceptionViewGroup;
 
-		public ObservableWebView(Context context)
+		public ObservableScrollView(Context context)
 			: base(context)
 		{
 
 		}
 
-		public ObservableWebView(Context context, IAttributeSet attrs)
+		public ObservableScrollView(Context context, IAttributeSet attrs)
 			: base(context, attrs)
 		{
 
 		}
 
-		public ObservableWebView(Context context, IAttributeSet attrs, int defStyle)
+		public ObservableScrollView(Context context, IAttributeSet attrs, int defStyle)
 			: base(context, attrs, defStyle)
 		{
 
@@ -80,15 +79,17 @@ namespace MaterialViewPager.Library
 
 				if (_mPrevScrollY < t)
 				{
-					_mScrollState = ScrollState.Up;
+					_mScrollState = ObservableScrollState.Up;
 				}
 				else if (t < _mPrevScrollY)
 				{
-					_mScrollState = ScrollState.Down;
-				}
-				else
-				{
-					_mScrollState = ScrollState.Stop;
+					_mScrollState = ObservableScrollState.Down;
+					//} else {
+					// Keep previous state while dragging.
+					// Never makes it STOP even if scrollY not changed.
+					// Before Android 4.4, onTouchEvent calls onScrollChanged directly for ACTION_MOVE,
+					// which makes mScrollState always STOP when onUpOrCancelMotionEvent is called.
+					// STOP state is now meaningless for ScrollView.
 				}
 				_mPrevScrollY = t;
 			}
@@ -123,8 +124,6 @@ namespace MaterialViewPager.Library
 			{
 				switch (ev.ActionMasked)
 				{
-					case MotionEventActions.Down:
-						break;
 					case MotionEventActions.Up:
 					case MotionEventActions.Cancel:
 						_mIntercepted = false;
@@ -168,26 +167,27 @@ namespace MaterialViewPager.Library
 								offsetX += v.Left - v.ScrollX;
 								offsetY += v.Top - v.ScrollY;
 							}
-							MotionEvent eventNoHistory = MotionEvent.ObtainNoHistory(ev);
-							eventNoHistory.OffsetLocation(offsetX, offsetY);
 
-							if (parent.OnInterceptTouchEvent(eventNoHistory))
+							MotionEvent eventHistoryLess = MotionEvent.ObtainNoHistory(ev);
+							eventHistoryLess.OffsetLocation(offsetX, offsetY);
+
+							if (parent.OnInterceptTouchEvent(eventHistoryLess))
 							{
 								_mIntercepted = true;
 
 								// If the parent wants to intercept ACTION_MOVE events,
 								// we pass ACTION_DOWN event to the parent
 								// as if these touch events just have began now.
-								eventNoHistory.Action = MotionEventActions.Down;
+								eventHistoryLess.Action = MotionEventActions.Down;
 
 								// Return this onTouchEvent() first and set ACTION_DOWN event for parent
 								// to the queue, to keep events sequence.
-								Post(() => parent.DispatchTouchEvent(eventNoHistory));
+								Post(() => parent.DispatchTouchEvent(eventHistoryLess));
 								return false;
 							}
 							// Even when this can't be scrolled anymore,
 							// simply returning false here may cause subView's click,
-							// so delegate it to base.
+							// so delegate it to super.
 							return base.OnTouchEvent(ev);
 						}
 						break;

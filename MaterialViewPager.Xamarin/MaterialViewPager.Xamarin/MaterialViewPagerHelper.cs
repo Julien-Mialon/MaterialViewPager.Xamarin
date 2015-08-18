@@ -8,7 +8,7 @@ using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Webkit;
-using MaterialViewPager.Library;
+using ObservableScrollView;
 
 namespace MaterialViewPager
 {
@@ -80,7 +80,7 @@ namespace MaterialViewPager
      * @param mScrollView                   the scrollable
      * @param observableScrollViewCallbacks use it if you want to get a callback of the RecyclerView
      */
-    public static void RegisterScrollView(Activity activity, ObservableScrollView mScrollView, IObservableScrollViewCallbacks observableScrollViewCallbacks) {
+    public static void RegisterScrollView(Activity activity, ObservableScrollView.ObservableScrollView mScrollView, IObservableScrollViewCallbacks observableScrollViewCallbacks) {
         if (activity != null && _hashMap.ContainsKey(activity)) {
             MaterialViewPagerAnimator animator;
             if (_hashMap.TryGetValue(activity, out animator) && animator != null) {

@@ -7,9 +7,10 @@ using Android.Support.V7.Widget;
 using Android.Util;
 using Android.Views;
 using Java.Lang;
-using MaterialViewPager.Library;
+using ObservableScrollView;
 using Xamarin.NineOldAndroids.Animations;
 using Xamarin.NineOldAndroids.Views;
+
 // ReSharper disable CompareOfFloatsByEqualityOperator
 
 namespace MaterialViewPager
@@ -491,7 +492,7 @@ namespace MaterialViewPager
 		 * @param scrollView                    the scrollable
 		 * @param observableScrollViewCallbacks use it if you want to get a callback of the RecyclerView
 		 */
-		public void RegisterScrollView(ObservableScrollView scrollView, IObservableScrollViewCallbacks observableScrollViewCallbacks)
+		public void RegisterScrollView(ObservableScrollView.ObservableScrollView scrollView, IObservableScrollViewCallbacks observableScrollViewCallbacks)
 		{
 			if (scrollView != null)
 			{
@@ -581,7 +582,7 @@ namespace MaterialViewPager
 		}
 
 
-		public void OnUpOrCancelMotionEvent(ScrollState scrollState)
+		public void OnUpOrCancelMotionEvent(ObservableScrollState scrollState)
 		{
 			if (_observableScrollViewCallbacks != null)
 				_observableScrollViewCallbacks.OnUpOrCancelMotionEvent(scrollState);
@@ -592,10 +593,10 @@ namespace MaterialViewPager
 	{
 		private readonly MaterialViewPagerAnimator _animator;
 		private readonly IObservableScrollViewCallbacks _observableScrollViewCallbacks;
-		private readonly ObservableScrollView _scrollView;
+		private readonly ObservableScrollView.ObservableScrollView _scrollView;
 		private bool _firstZeroPassed;
 
-		public ObservableScrollViewCallbacks(MaterialViewPagerAnimator materialViewPagerAnimator, ObservableScrollView scrollView, IObservableScrollViewCallbacks observableScrollViewCallbacks)
+		public ObservableScrollViewCallbacks(MaterialViewPagerAnimator materialViewPagerAnimator, ObservableScrollView.ObservableScrollView scrollView, IObservableScrollViewCallbacks observableScrollViewCallbacks)
 		{
 			_animator = materialViewPagerAnimator;
 			_scrollView = scrollView;
@@ -629,7 +630,7 @@ namespace MaterialViewPager
 		}
 
 
-		public void OnUpOrCancelMotionEvent(ScrollState scrollState)
+		public void OnUpOrCancelMotionEvent(ObservableScrollState scrollState)
 		{
 			if (_observableScrollViewCallbacks != null)
 				_observableScrollViewCallbacks.OnUpOrCancelMotionEvent(scrollState);
