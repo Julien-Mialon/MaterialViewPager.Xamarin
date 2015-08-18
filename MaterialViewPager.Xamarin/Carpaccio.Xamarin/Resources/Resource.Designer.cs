@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Carpaccio.Xamarin.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Carpaccio.Resource", IsApplication=false)]
 
-namespace Carpaccio.Xamarin
+namespace Carpaccio
 {
 	
 	
@@ -27,6 +27,18 @@ namespace Carpaccio.Xamarin
 		public partial class Attribute
 		{
 			
+			// aapt resource value: 0x7f010003
+			public static int displayErrors = 2130771971;
+			
+			// aapt resource value: 0x7f010002
+			public static int onlyForPreview = 2130771970;
+			
+			// aapt resource value: 0x7f010001
+			public static int packages = 2130771969;
+			
+			// aapt resource value: 0x7f010000
+			public static int register = 2130771968;
+			
 			static Attribute()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -37,21 +49,33 @@ namespace Carpaccio.Xamarin
 			}
 		}
 		
-		public partial class String
+		public partial class Styleable
 		{
 			
-			// aapt resource value: 0x7f020001
-			public static int ApplicationName = 2130837505;
+			public static int[] Carpaccio = new int[] {
+					2130771968,
+					2130771969,
+					2130771970,
+					2130771971};
 			
-			// aapt resource value: 0x7f020000
-			public static int Hello = 2130837504;
+			// aapt resource value: 3
+			public static int Carpaccio_displayErrors = 3;
 			
-			static String()
+			// aapt resource value: 2
+			public static int Carpaccio_onlyForPreview = 2;
+			
+			// aapt resource value: 1
+			public static int Carpaccio_packages = 1;
+			
+			// aapt resource value: 0
+			public static int Carpaccio_register = 0;
+			
+			static Styleable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 			}
 			
-			private String()
+			private Styleable()
 			{
 			}
 		}

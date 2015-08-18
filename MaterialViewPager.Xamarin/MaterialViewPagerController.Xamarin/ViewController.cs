@@ -26,7 +26,7 @@ namespace MaterialViewPager.Controllers
         }
     }
 
-    public void materialAdapter(View view, String mappedName, String layoutName) {
+    public void materialAdapter(View view, string mappedName, string layoutName) {
         final int layoutResId = getLayoutIdentifierFromString(view.getContext(), layoutName);
         final Carpaccio carpaccio = CarpaccioHelper.findParentCarpaccio(view);
         if (carpaccio != null && layoutResId != -1 && view instanceof RecyclerView) {
@@ -48,7 +48,7 @@ namespace MaterialViewPager.Controllers
         //the size taken by the header
         protected int mPlaceholderSize = 1;
 
-        public MaterialCarpaccioRecyclerViewAdapter(int mPlaceholderSize, Carpaccio carpaccio, int layoutResId, String mappedName) {
+        public MaterialCarpaccioRecyclerViewAdapter(int mPlaceholderSize, Carpaccio carpaccio, int layoutResId, string mappedName) {
             super(carpaccio, layoutResId, mappedName);
             this.mPlaceholderSize = mPlaceholderSize;
         }
@@ -69,7 +69,7 @@ namespace MaterialViewPager.Controllers
         }
 
         
-        public Object getItemForRow(View view, int position) {
+        public object getItemForRow(View view, int position) {
             if(position >= mPlaceholderSize) {
                 return super.getItemForRow(view, position - mPlaceholderSize);
             }else

@@ -7,7 +7,7 @@ namespace MaterialViewPager.Header
 	{
 		public int Color { get; protected set; }
 		public int ColorRes { get; protected set; }
-		public String ImageUrl { get; protected set; }
+		public string ImageUrl { get; protected set; }
 		public Drawable Drawable { get; protected set; }
 
 		protected HeaderDesign()
@@ -15,7 +15,7 @@ namespace MaterialViewPager.Header
 
 		}
 
-		public static HeaderDesign FromColorAndUrl(int color, String imageUrl)
+		public static HeaderDesign FromColorAndUrl(int color, string imageUrl)
 		{
 			return new HeaderDesign
 			{
@@ -24,7 +24,7 @@ namespace MaterialViewPager.Header
 			};
 		}
 
-		public static HeaderDesign FromColorResAndUrl(int colorRes, String imageUrl)
+		public static HeaderDesign FromColorResAndUrl(int colorRes, string imageUrl)
 		{
 			return new HeaderDesign
 			{

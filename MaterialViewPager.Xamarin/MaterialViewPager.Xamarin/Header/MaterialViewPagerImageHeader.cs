@@ -25,7 +25,7 @@ namespace MaterialViewPager.Header
 
 		}
 
-		public void SetImageUrl(String urlImage, int fadeDuration)
+		public void SetImageUrl(string urlImage, int fadeDuration)
 		{
 			MaterialViewPagerImageHelper.SetImageUrl(this, urlImage, fadeDuration);
 		}

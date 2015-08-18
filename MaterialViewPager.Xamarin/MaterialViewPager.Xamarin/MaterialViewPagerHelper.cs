@@ -14,7 +14,7 @@ namespace MaterialViewPager
 {
 	public class MaterialViewPagerHelper
 	{
-		private static ConcurrentDictionary<Object, MaterialViewPagerAnimator> _hashMap = new ConcurrentDictionary<object, MaterialViewPagerAnimator>();
+		private static ConcurrentDictionary<object, MaterialViewPagerAnimator> _hashMap = new ConcurrentDictionary<object, MaterialViewPagerAnimator>();
 
     /**
      * Register an MaterialViewPagerAnimator attached to an activity into the ConcurrentHashMap
@@ -141,7 +141,7 @@ namespace MaterialViewPager
 
                 { //inject margin top
                     int marginTop = animator.GetHeaderHeight() + 10;
-                    String js = string.Format("document.body.style.marginTop= \"{0}px\"", marginTop);
+                    string js = string.Format("document.body.style.marginTop= \"{0}px\"", marginTop);
                     WebViewLoadJs(webView, js);
                 }
 

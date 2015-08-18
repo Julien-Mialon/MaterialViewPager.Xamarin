@@ -2451,12 +2451,6 @@ namespace MaterialViewPager
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f090014
-			public static int ApplicationName = 2131296276;
-			
-			// aapt resource value: 0x7f090013
-			public static int Hello = 2131296275;
-			
 			// aapt resource value: 0x7f090000
 			public static int abc_action_bar_home_description = 2131296256;
 			

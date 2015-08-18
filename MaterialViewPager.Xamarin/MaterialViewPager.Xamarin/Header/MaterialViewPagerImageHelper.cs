@@ -18,7 +18,7 @@ namespace MaterialViewPager.Header
 		 *
 		 * TODO : remove Picasso
 		 */
-		public static void SetImageUrl(ImageView imageView, String urlImage, int fadeDuration)
+		public static void SetImageUrl(ImageView imageView, string urlImage, int fadeDuration)
 		{
 			float alpha = ViewHelper.GetAlpha(imageView);
 			ImageView viewToAnimate = imageView;

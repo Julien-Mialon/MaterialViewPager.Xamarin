@@ -250,7 +250,7 @@ namespace MaterialViewPager
 		 * change the header displayed image with a fade
 		 * may remove Picasso
 		 */
-		public void SetImageUrl(String imageUrl, int fadeDuration)
+		public void SetImageUrl(string imageUrl, int fadeDuration)
 		{
 			if (imageUrl != null)
 			{
