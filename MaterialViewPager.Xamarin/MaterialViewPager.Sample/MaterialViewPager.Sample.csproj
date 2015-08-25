@@ -65,7 +65,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="Activities\Fragment\RecyclerViewFragment.cs" />
+    <Compile Include="Activities\Fragment\ScrollFragment.cs" />
+    <Compile Include="Activities\Fragment\WebViewFragment.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\TestListViewAdapter.cs" />
+    <Compile Include="Activities\TestRecyclerViewAdapter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,9 +82,17 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KenBurnsView.Xamarin\KenBurnsView.Xamarin.csproj">
+      <Project>{51dd267d-1abd-415a-9f56-819356fdd95c}</Project>
+      <Name>KenBurnsView.Xamarin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MaterialViewPager.Xamarin\MaterialViewPager.Xamarin.csproj">
       <Project>{34705e01-4062-41c3-88e9-cdb0da81a7d8}</Project>
       <Name>MaterialViewPager.Xamarin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObservableScrollView.Xamarin\ObservableScrollView.Xamarin.csproj">
+      <Project>{b26bd487-8be7-4cce-95a0-17defc5412a0}</Project>
+      <Name>ObservableScrollView.Xamarin</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +193,7 @@
       <Version>22.2.0.0</Version>
     </XamarinComponentReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.

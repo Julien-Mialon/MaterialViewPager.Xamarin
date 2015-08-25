@@ -17,16 +17,17 @@ namespace MaterialViewPager.Controllers
 
     protected int recyclerColumnCount = 1;
 
-    public void materialColumns(View view, int number) {
-        if (view is RecyclerView) {
+    public void materialColumns(View view, int number)
+    {
+	    RecyclerView recyclerView = view as RecyclerView;
+	    if (recyclerView != null) {
             recyclerColumnCount = number;
 
-            RecyclerView recyclerView = (RecyclerView) view;
-            recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), number));
+            recyclerView.SetLayoutManager(new GridLayoutManager(recyclerView.Context, number));
         }
     }
 
-    public void materialAdapter(View view, string mappedName, string layoutName) {
+	public void materialAdapter(View view, string mappedName, string layoutName) {
         final int layoutResId = getLayoutIdentifierFromString(view.getContext(), layoutName);
         final Carpaccio carpaccio = CarpaccioHelper.findParentCarpaccio(view);
         if (carpaccio != null && layoutResId != -1 && view instanceof RecyclerView) {
